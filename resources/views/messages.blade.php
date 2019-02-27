@@ -3,10 +3,16 @@
 
     <h1>All messages</h1>
 
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium blanditiis ex quia quidem
-        quisquam temporibus veritatis. Accusamus assumenda dolor dolore eius incidunt iure nostrum unde.
-        Explicabo maxime totam voluptatibus.</p>
+    @if(count($messages) > 0)
+        @foreach($messages as $message)
+            <ul class="list-group">
+                <li class="list-group-item">Name: {{$message->name}}</li>
+                <li class="list-group-item">Email: {{$message->email}}</li>
+                <li class="list-group-item">Message: {{$message->message}}</li>
+            </ul>
+            <hr>
+        @endforeach
+    @endif
 
 
 @endsection

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
+
 class PagesController extends Controller
 {
     /**
@@ -33,6 +35,7 @@ class PagesController extends Controller
      */
     public function messages()
     {
-        return view('messages');
+        $messages = Message::all();
+        return view('messages')->with('messages', $messages);
     }
 }

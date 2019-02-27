@@ -1,10 +1,21 @@
 @extends('layouts.app')
 @section('content')
     <h1>Contact</h1>
+    {{ Form::open(array('url' => '/contact/submit',  'method' => 'post')) }}
+    <div class="form-group">
+        <?php echo Form::text('name', '', ['placeholder' => 'Your name']) ?>
+    </div>
+    <div class="form-group">
+        <?php echo Form::text('email', '', ['placeholder' => 'Email']);?>
+    </div>
+    <div class="form-group">
+        <?php echo Form::textarea('message', '', ['placeholder' => 'Text message']) ?>
+    </div>
 
+    <div class="form-group">
+        <?php echo Form::submit('Send'); ?>
+    </div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium blanditiis ex quia quidem
-        quisquam temporibus veritatis. Accusamus assumenda dolor dolore eius incidunt iure nostrum unde.
-        Explicabo maxime totam voluptatibus.</p>
+    {!! Form::close() !!}
 
 @endsection
